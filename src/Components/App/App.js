@@ -12,7 +12,7 @@ class App extends React.Component {
                 {
                     name: "Another One",
                     artist: "DJ Khaled",
-                    album: "whatever",
+                    album: "whatever2",
                     id: 1,
                 },
                 {
