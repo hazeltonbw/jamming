@@ -1,7 +1,4 @@
-let AccessToken = "";
-let ExpiresIn = "";
-const CLIENT_ID = "408c83c5fc334f67bce22d1074fb796a";
-const REDIRECT_URI = "http://localhost:3000/";
+import { CLIENT_ID, REDIRECT_URI, AccessToken, ExpiresIn } from "./config.js";
 
 export class Spotify {
     async getAccessToken() {
