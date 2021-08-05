@@ -7,6 +7,9 @@ import React from "react";
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.addTrack = this.addTrack.bind(this);
+        this.removeTrack = this.removeTrack.bind(this);
+
         this.state = {
             searchResults: [
                 {
@@ -53,6 +56,26 @@ class App extends React.Component {
             ]
         };
     }
+
+    addTrack(track) {
+        if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+            return;
+        }
+        this.state.playlistTracks.push(track);
+        this.setState();
+    }
+
+    removeTrack(track) {
+        if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+            return;
+        }
+
+
+
+    }
+
+    
+
     render() {
         return (
             <div>
@@ -64,10 +87,12 @@ class App extends React.Component {
                     <div className="App-playlist">
                         <SearchResults
                             searchResults={this.state.searchResults}
+                            onAdd={this.addTrack}
                         />
                         <Playlist 
                             playlistName={this.state.playlistName} 
                             playlistTracks={this.state.playlistTracks}
+                            onRemove={this.removeTrack}
                         />
                     </div>
                 </div>

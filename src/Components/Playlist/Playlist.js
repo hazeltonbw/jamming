@@ -10,6 +10,8 @@ export class Playlist extends Component {
                 <button className="Playlist-save">SAVE TO SPOTIFY</button>
             <TrackList 
                 playlistTracks={this.props.playlistTracks}
+                onRemove={this.props.onRemove}
+                isRemoval={true}
             />
             </div>
         );
