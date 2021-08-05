@@ -12,7 +12,7 @@ class App extends React.Component {
                 {
                     name: "Another One",
                     artist: "DJ Khaled",
-                    album: "whatever2",
+                    album: "whatever",
                     id: 1,
                 },
                 {
@@ -26,8 +26,31 @@ class App extends React.Component {
                     artist: "Darude",
                     album: "Sandstorm",
                     id: 3,
-                },
+                }
             ],
+
+            playlistName: "Fun tracks",
+            
+            playlistTracks: [
+                {
+                    name: "Another One",
+                    artist: "DJ Khaled",
+                    album: "whatever",
+                    id: 1,
+                },
+                {
+                    name: "Fade to Black",
+                    artist: "Metallica",
+                    album: "Fade to Black",
+                    id: 2,
+                },
+                {
+                    name: "Sandstorm",
+                    artist: "Darude",
+                    album: "Sandstorm",
+                    id: 3,
+                }
+            ]
         };
     }
     render() {
@@ -42,7 +65,10 @@ class App extends React.Component {
                         <SearchResults
                             searchResults={this.state.searchResults}
                         />
-                        <Playlist />
+                        <Playlist 
+                            playlistName={this.state.playlistName} 
+                            playlistTracks={this.state.playlistTracks}
+                        />
                     </div>
                 </div>
             </div>

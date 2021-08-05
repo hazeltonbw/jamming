@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { TrackList } from "../TrackList/TrackList";
 import "./Playlist.css";
 
 export class Playlist extends Component {
@@ -7,6 +8,9 @@ export class Playlist extends Component {
             <div className="Playlist">
                 <input value="New Playlist" />
                 <button className="Playlist-save">SAVE TO SPOTIFY</button>
+            <TrackList 
+                playlistTracks={this.props.playlistTracks}
+            />
             </div>
         );
     }
