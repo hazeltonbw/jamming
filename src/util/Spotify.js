@@ -51,26 +51,78 @@ const Spotify = {
             console.log(error);
         }
     },
+
     async savePlaylist(playlistName, track_uris) {
         if (!playlistName || !track_uris.length)
             return;
-        if (!AccessToken) AccessToken = await Spotify.getAccessToken();
-        const headers = {
+        AccessToken = await Spotify.getAccessToken();
+
+        let headers = {
             headers: { Authorization: `Bearer ${AccessToken}` }
         };
-        let users_id;
+
+        let user_id;
         let responseJSON;
-        const url = "https://api.spotify.com/v1/me";
+        let url = "https://api.spotify.com/v1/me";
+
         try {
             const response = await fetch(url, headers);
             if (response.ok) {
                 responseJSON = await response.json();
                 console.log(responseJSON);
+                user_id = responseJSON.id;
+                if (!user_id) return;
             }
         }
         catch (error) {
             console.log(error);
         }
+
+        // Make the POST request to create a playlist in the user's Spotify account
+        // First, setup headers, data and endpoint url
+        let data = {
+            "name": playlistName
+        };
+
+        headers = {
+            headers: {  
+                Authorization: `Bearer ${AccessToken}`,
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(data)
+        };
+        url = `https://api.spotify.com/v1/users/${user_id}/playlists`;
+
+        let playlistID;
+        try {
+            const response = await fetch(url, headers);
+            if (response.ok) {
+                responseJSON = await response.json();
+                playlistID = responseJSON.id;
+                //console.log(playlistID);
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+        // Now add the tracks to the playlist
+        data = {
+            "uris": track_uris
+        }
+        url = `https://api.spotify.com/v1/playlists/${playlistID}/tracks`;
+        headers.body = JSON.stringify(data);
+        try {
+            const response = await fetch(url, headers);
+            if (response.ok) {
+                responseJSON = response.json();
+            }
+        }
+        catch(error) {
+            console.log(error);
+        }
+
     }
 }
 
