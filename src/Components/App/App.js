@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.css"
 import { SearchBar } from "../SearchBar/SearchBar.js";
 import { SearchResults } from "../SearchResults/SearchResults.js";
 import { Playlist } from "../Playlist/Playlist.js";
@@ -79,14 +79,17 @@ export default class App extends React.Component {
     }
 
     savePlaylist() {
-        const trackURIs =[];
+        const playlistName = this.state.playlistName;
+        const track_uris = this.state.playlistTracks.map(track => track.uri);
+        Spotify.savePlaylist(playlistName, track_uris);
     // TODO: 
     // Generate an array of uri values called trackURIs from the playlistTracks property.
     // In a later step, you will pass the trackURIs array and playlistName to a method that will save the user’s playlist to their account.
     }
 
-    search(term) {
-        // this.setState({searchResults: Spotify.search(term)}); TODO
+    async search(term) {
+        let search_results = await Spotify.search(term);
+        this.setState({searchResults: search_results});
     }
 
     render() {
@@ -115,5 +118,3 @@ export default class App extends React.Component {
         );
     }
 }
-
-
