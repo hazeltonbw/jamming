@@ -37,7 +37,6 @@ const Spotify = {
             if (response.ok) {
                 jsonResponse = await response.json();
                 if (!jsonResponse) return [];
-                //console.log(jsonResponse.tracks.items);
                 return jsonResponse.tracks.items.map(track => ({
                     id: track.id,
                     name: track.name,
@@ -69,7 +68,6 @@ const Spotify = {
             const response = await fetch(url, headers);
             if (response.ok) {
                 responseJSON = await response.json();
-                console.log(responseJSON);
                 user_id = responseJSON.id;
                 if (!user_id) return;
             }
@@ -100,7 +98,6 @@ const Spotify = {
             if (response.ok) {
                 responseJSON = await response.json();
                 playlistID = responseJSON.id;
-                //console.log(playlistID);
             }
         }
         catch (error) {
