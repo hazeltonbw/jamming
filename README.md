@@ -1,3 +1,3 @@
 # Jamming
 
-![Image](/src/images/jammming.png) 
+![Image](https://raw.githubusercontent.com/hazeltonbw/jamming/main/src/images/jammming.PNG) 
