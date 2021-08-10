@@ -1,3 +1,3 @@
 # Jamming
 
-![Image](src/images/jammming.png)
+![Image](/src/images/jammming.png) 
