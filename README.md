@@ -1,3 +1,3 @@
 # Jamming
 
-![Alt text](relative/path/to/img.jpg?raw=true "Spotify Song Playlist Creater")
+![Alt text](src/images/jammming.png "Spotify Song Playlist Creater")
