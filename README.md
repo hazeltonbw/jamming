@@ -1,3 +1,3 @@
 # Jamming
 
-![Alt text](src/images/jammming.png "Spotify Song Playlist Creater")
+![Image](src/images/jammming.png)
