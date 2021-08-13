@@ -1,8 +1,8 @@
+import { CLIENT_ID, REDIRECT_URI } from "./config";
 let AccessToken = "";
 let ExpiresIn = "";
-const CLIENT_ID = "408c83c5fc334f67bce22d1074fb796a";
-const REDIRECT_URI = "http://localhost:3000/";
 
+const endpoint = "https://api.spotify.com/v1/";
 const Spotify = {
     async getAccessToken() {
         if (AccessToken)
@@ -27,13 +27,11 @@ const Spotify = {
 
     async search(term) {
         AccessToken = await Spotify.getAccessToken();
-        const AccessObject = {
-            headers: { Authorization: `Bearer ${AccessToken}` }
-        };
-        const search_url = `https://api.spotify.com/v1/search?type=track&q=${term}`;
+        const headers = { Authorization: `Bearer ${AccessToken}` };
+        const search_url = `${endpoint}search?type=track&q=${term}`;
         let jsonResponse = "";
         try {
-            let response = await fetch(search_url, AccessObject);
+            let response = await fetch(search_url, { headers });
             if (response.ok) {
                 jsonResponse = await response.json();
                 if (!jsonResponse) return [];
@@ -51,23 +49,24 @@ const Spotify = {
         }
     },
 
-    async savePlaylist(playlistName, track_uris) {
-        if (!playlistName || !track_uris.length)
+    async savePlaylist(name, uris) {
+        if (!name || !uris)
             return;
         AccessToken = await Spotify.getAccessToken();
 
-        let headers = {
-            headers: { Authorization: `Bearer ${AccessToken}` }
+        const headers = {
+            Authorization: `Bearer ${AccessToken}`,
+            'Content-Type': 'application/json'
         };
-
         let user_id;
         let responseJSON;
         let url = "https://api.spotify.com/v1/me";
 
         try {
-            const response = await fetch(url, headers);
+            const response = await fetch(url, { headers });
             if (response.ok) {
                 responseJSON = await response.json();
+                console.log(responseJSON);
                 user_id = responseJSON.id;
                 if (!user_id) return;
             }
@@ -75,26 +74,15 @@ const Spotify = {
         catch (error) {
             console.log(error);
         }
-
-        // Make the POST request to create a playlist in the user's Spotify account
-        // First, setup headers, data and endpoint url
-        let data = {
-            "name": playlistName
-        };
-
-        headers = {
-            headers: {  
-                Authorization: `Bearer ${AccessToken}`,
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify(data)
-        };
-        url = `https://api.spotify.com/v1/users/${user_id}/playlists`;
+        url = `${endpoint}users/${user_id}/playlists`;
 
         let playlistID;
         try {
-            const response = await fetch(url, headers);
+            const response = await fetch(url, {
+                headers, 
+                method: "POST", 
+                body: JSON.stringify({name})
+            });
             if (response.ok) {
                 responseJSON = await response.json();
                 playlistID = responseJSON.id;
@@ -105,13 +93,12 @@ const Spotify = {
         }
 
         // Now add the tracks to the playlist
-        data = {
-            "uris": track_uris
-        }
         url = `https://api.spotify.com/v1/playlists/${playlistID}/tracks`;
-        headers.body = JSON.stringify(data);
         try {
-            const response = await fetch(url, headers);
+            const response = await fetch(url, {
+                headers,
+                method: 'POST',
+                body: JSON.stringify({uris})});
             if (response.ok) {
                 responseJSON = response.json();
             }
