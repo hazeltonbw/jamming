@@ -6,6 +6,8 @@ import { Spotify } from "../../util/Spotify";
 import { Profile } from "../Profile/Profile";
 import React from "react";
 
+require('dotenv').config();
+
 export default class App extends React.Component {
 constructor(props) {
 super(props);

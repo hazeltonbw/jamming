@@ -1,4 +1,3 @@
-import { CLIENT_ID, REDIRECT_URI } from "./config";
 let AccessToken = "";
 let ExpiresIn = "";
 
@@ -7,8 +6,9 @@ const Spotify = {
     async getAccessToken() {
         if (AccessToken)
             return AccessToken;
-
-        let url = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${REDIRECT_URI}`;
+        
+        console.log(process.env.REACT_APP_CLIENT_ID);
+        let url = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}`;
         AccessToken = window.location.href.match(/access_token=([^&]*)/);
         ExpiresIn = window.location.href.match(/expires_in=([^&]*)/);
 
