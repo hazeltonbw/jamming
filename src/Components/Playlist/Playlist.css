@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
     overflow-y: scroll;
     width: 37%;
     max-height: 950px;
@@ -14,11 +15,17 @@
     width: 100%;
     border: 0;
     outline: 0;
-    background: transparent;
-    border-bottom: 1px solid #6f6f6f;
+    background: white;
+    border: 1px solid #6f6f6f;
     font-family: "Poppins", sans-serif;
     font-size: 1.55rem;
-    color: #fff;
+    color: #010c3f;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.Playlist input:focus::placeholder {
+    color: transparent;
 }
 
 .Playlist-save {
