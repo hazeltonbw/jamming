@@ -119,12 +119,7 @@ h2 {
 @media only screen and (max-width: 1020px) {
     header {
         justify-content: center;
-        padding: 0 11% 0 11%;
         flex-direction: column;
-    }
-
-    h1 {
-        font-size: 2rem;
     }
 
     a {
@@ -132,13 +127,12 @@ h2 {
     }
 
     .UserTitle {
-        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
     .App-playlist {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
