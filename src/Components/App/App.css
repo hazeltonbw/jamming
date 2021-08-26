@@ -59,6 +59,7 @@ html {
 }
 
 a {
+    width: 40%;
     text-decoration: none;
 }
 
@@ -77,7 +78,6 @@ a:active {
 }
 
 h1 {
-    width: 50%;
     padding: 0.77rem 0;
     background-color: #010c3f;
     text-align: center;
@@ -109,6 +109,7 @@ h2 {
 
 .UserTitle {
     display: flex;
+    flex-direction: row-reverse;
     width: 100%;
     justify-content: space-between;
 }

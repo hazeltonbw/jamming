@@ -45,6 +45,7 @@
     padding: 0.77rem 0;
     border-radius: 54px;
     border-width: 0px;
+    border: 1px solid transparent;
     margin: 1.00rem 0;
     background-color: #6c41ec;
     text-align: center;
@@ -55,6 +56,8 @@
 }
 
 .Playlist-save:hover {
+    box-shadow: 0 0 5px rgba(108, 65, 233, 0.7);
+    border: 1px solid rgba(108, 65, 233, 0.7);
     background-color: rgba(108, 65, 233, 0.7);
 }
 
