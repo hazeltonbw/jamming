@@ -16,7 +16,7 @@
 }
 
 .SearchBar input:hover {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     color:rgba(108, 65, 233, 0.7);
     border: 1px solid rgba(108, 65, 233, 0.7);
     border-radius: 7px;

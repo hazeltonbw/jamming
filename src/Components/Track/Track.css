@@ -4,6 +4,14 @@
     border-bottom: 1px solid rgba(256, 256, 256, 0.8);
 }
 
+.Track:hover {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(108, 65, 233, 0.7);
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(108, 65, 233, 0.7);
+}
+
 .Track-action {
     cursor: pointer;
     padding: 0.5rem;
