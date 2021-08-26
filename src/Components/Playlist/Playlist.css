@@ -4,6 +4,7 @@
     align-items: center;
     margin-top: 10px;
     overflow-y: scroll;
+    overflow-x: hidden;
     width: 37%;
     max-height: 950px;
     padding: 2.27rem 1.16rem;
@@ -44,7 +45,7 @@
     padding: 0.77rem 0;
     border-radius: 54px;
     border-width: 0px;
-    margin-top: 1.27rem;
+    margin: 1.00rem 0;
     background-color: #6c41ec;
     text-align: center;
     font-size: 0.83rem;

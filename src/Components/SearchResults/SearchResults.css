@@ -3,6 +3,7 @@
     width: 50%;
     height: 950px;
     overflow-y: scroll;
+    overflow-x: hidden;
     padding: 0.88rem;
     background-color: rgba(1, 12, 63, 0.7);
     box-shadow: 0 4px 2px 2px #000000;
