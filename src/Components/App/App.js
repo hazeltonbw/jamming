@@ -160,7 +160,7 @@ export default class App extends React.Component {
                     "uri": "spotify:track:3nwm64vSRDY3NPLRrQTI1a"
                 }
             ],
-            playlistName: "Name Your Playlist",
+            playlistName: "Playlist Name",
 
             playlistTracks: [
                 {
@@ -210,7 +210,7 @@ export default class App extends React.Component {
         const track_uris = this.state.playlistTracks.map(track => track.uri);
         Spotify.savePlaylist(playlistName, track_uris);
         this.setState({
-            playlistName: 'Name Your Playlist',
+            playlistName: 'Playlist Name',
             playlistTracks: []
         });
     }

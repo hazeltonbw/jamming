@@ -62,11 +62,11 @@
     }
 
     .SearchBar input{
-        width: 100%;
+        width: 180px;
     }
 
     .SearchButton {
-        width: 100%;
+        width: 180px;
         margin: 5px 0;
     }
 }
