@@ -2,7 +2,7 @@
     margin-top: 10px;
     width: 50%;
     height: 950px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     padding: 0.88rem;
     background-color: rgba(1, 12, 63, 0.7);
