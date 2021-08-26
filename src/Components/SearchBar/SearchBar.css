@@ -6,6 +6,7 @@
 }
 
 .SearchBar input {
+    transition: all 0.3s ease;
     width: 287px;
     padding: 0.5rem 0;
     border: 1px solid #fff;
@@ -15,6 +16,15 @@
     font-size: 1rem;
 }
 
+.SearchBar input:hover {
+    transition: all 0.3s ease;
+    color:rgba(108, 65, 233, 0.7);
+    border: 1px solid rgba(108, 65, 233, 0.7);
+    border-radius: 7px;
+    outline: none;
+    border-color: rgba(108, 65, 233, 0.7);
+    box-shadow: 0 0 10px rgba(108, 65, 233, 0.7);
+}
 .SearchBar input:focus {
     outline: none;
 }
