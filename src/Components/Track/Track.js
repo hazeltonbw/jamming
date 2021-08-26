@@ -14,10 +14,10 @@ export class Track extends Component {
         return (
             <button
                 className="Track-action"
-                onClick={this.props.isRemoval === true ? this.removeTrack : this.addTrack}    
+                onClick={this.props.isRemoval === true ? this.removeTrack : this.addTrack}
             >
                 {buttonType}
-            </button> 
+            </button>
         );
     }
     addTrack(track) {

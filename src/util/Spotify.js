@@ -6,7 +6,7 @@ const Spotify = {
     async getAccessToken() {
         if (AccessToken)
             return AccessToken;
-        
+
         const isBuild = process.env.NODE_ENV === "production";
         const redirect_uri = isBuild ? "https://webejammming.netlify.app/" : process.env.REACT_APP_REDIRECT_URI;
         let url = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirect_uri}`;
@@ -80,9 +80,9 @@ const Spotify = {
         let playlistID;
         try {
             const response = await fetch(url, {
-                headers, 
-                method: "POST", 
-                body: JSON.stringify({name})
+                headers,
+                method: "POST",
+                body: JSON.stringify({ name })
             });
             if (response.ok) {
                 responseJSON = await response.json();
@@ -99,12 +99,13 @@ const Spotify = {
             const response = await fetch(url, {
                 headers,
                 method: 'POST',
-                body: JSON.stringify({uris})});
+                body: JSON.stringify({ uris })
+            });
             if (response.ok) {
                 responseJSON = response.json();
             }
         }
-        catch(error) {
+        catch (error) {
             console.log(error);
         }
 
