@@ -1,7 +1,7 @@
 .SearchBar {
     display: flex;
     align-items: center;
-    width: 283px;
+    width: 40vw;
 }
 
 .SearchBar input {
@@ -59,16 +59,10 @@
 
     .SearchBar input{
         width: 100%;
-        
-    }
-    .SearchButton {
-        width: 100%;
-        margin-top: 5px;
-        margin-bottom: 5px;
     }
 
-    h1 {
-        margin-left: 0;
+    .SearchButton {
+        width: 100%;
+        margin: 5px 0;
     }
-    
 }

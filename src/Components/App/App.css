@@ -58,18 +58,19 @@ html {
 }
 
 a {
-    transition: all 0.3s ease-in-out;
     text-decoration: none;
 }
 
-a:link, a:visited {
+a:link {
     color: white;
 }
-
-a:hover {
+a:visited {
+    color: white;
+}
+h1:hover {
+    transition: all 0.3s ease-in-out;
     color: #6f2c8b;
 }
-
 a:active {
     color: white;
 }
