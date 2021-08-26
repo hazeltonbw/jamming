@@ -132,4 +132,8 @@ h2 {
     .App-playlist {
         flex-direction: column-reverse;
     }
+
+    .UserProfile {
+        display: none;
+    }
 }

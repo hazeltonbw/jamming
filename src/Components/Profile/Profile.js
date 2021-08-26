@@ -5,7 +5,7 @@ import logo from '../../images/user-default-icon.png';
 export class Profile extends Component {
     render() {
         return (
-            <div>
+            <div  className="UserProfile">
                 <img
                     src={logo}
                     alt="User icon"

@@ -223,12 +223,12 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Profile className="Profile" />
+                <Profile />
                 <header>
                     <div className="UserTitle">
-                        <h1>
-                            <a href="#">Ja<span className="highlight">mmm</span>ing</a>
-                        </h1>
+                        <a href="#">
+                            <h1>Ja<span className="highlight">mmm</span>ing</h1>
+                        </a>
                         <SearchBar onSearch={this.search} />
                     </div>
                 </header>
