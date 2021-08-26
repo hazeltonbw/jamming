@@ -126,6 +126,10 @@ h2 {
         flex-direction: column;
     }
 
+    a {
+        width: auto;
+    }
+    
     .UserTitle {
         flex-direction: column;
         justify-content: center;
