@@ -1,7 +1,6 @@
 
 header {
     padding: 0 17% 0 17%;
-
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -62,12 +61,16 @@ a {
     text-decoration: none;
 }
 
-a:visited {
-    color: inherit;
+a:link, a:visited {
+    color: white;
 }
 
 a:hover {
     color: #6f2c8b;
+}
+
+a:active {
+    color: white;
 }
 
 h1 {
@@ -90,7 +93,7 @@ h2 {
 }
 
 .App {
-    height: 100vh;
+    height: 100%;
     padding: 0 17% 10% 17%;
     background-image: url("./background_photo_desktop.jpg");
     background-size: cover;
@@ -105,7 +108,6 @@ h2 {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
 }
 
 .App-playlist {
@@ -124,6 +126,9 @@ h2 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-left: 0;
+    }
+
+    .App-playlist {
+        flex-direction: column-reverse;
     }
 }
