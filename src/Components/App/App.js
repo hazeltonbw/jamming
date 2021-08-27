@@ -237,7 +237,7 @@ export default class App extends React.Component {
 
     async changeProfilePic() {
         let url = await Spotify.getProfilePicURL();
-        this.setState({ profilePic: url });
+        if (url) this.setState({ profilePic: url });
     }
 
     render() {
