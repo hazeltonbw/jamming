@@ -104,6 +104,8 @@ const Spotify = {
         }
     },
     async getProfilePicURL() {
+        AccessToken = await Spotify.getAccessToken();
+        if (!AccessToken) return;
         const headers = { Authorization: `Bearer ${AccessToken}` };
         let url = "https://api.spotify.com/v1/me";
         let responseJSON;
