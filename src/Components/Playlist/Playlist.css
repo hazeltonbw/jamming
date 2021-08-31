@@ -24,14 +24,14 @@
     font-size: 1.55rem;
     color: #010c3f;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .Playlist input:hover {
     transition: all 0.3s ease-in-out;
     color:rgba(108, 65, 233, 0.7);
     border: 1px solid rgba(108, 65, 233, 0.7);
-    border-radius: 7px;
+    border-radius: 10px;
     outline: none;
     border-color: rgba(108, 65, 233, 0.7);
     box-shadow: 0 0 10px rgba(108, 65, 233, 0.7);
