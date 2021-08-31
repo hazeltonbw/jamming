@@ -18,10 +18,12 @@ const Spotify = {
 			return AccessToken;
 		} else {
 			const isBuild = process.env.NODE_ENV === "production";
-			const redirect_uri = isBuild
-				? "https://webejammming.netlify.app/"
+			const redirect_uri = isBuild ? "https://webejammming.netlify.app/"
 				: process.env.REACT_APP_REDIRECT_URI;
-			let url = `https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirect_uri}`;
+			let url = `https://accounts.spotify.com/authorize?\
+			client_id=${process.env.REACT_APP_CLIENT_ID}\
+			&response_type=token&scope=playlist-modify-public\
+			&redirect_uri=${redirect_uri}`;
 			window.location = url;
 		}
 	},

@@ -6,7 +6,7 @@ class Profile extends Component {
     render() {
         return (
             <div className="UserProfile">
-                <h5>{this.props.username}</h5>
+                <h6>{this.props.username}</h6>
                 <img src={this.props.profilePicURL} alt="User icon"></img>
             </div>
         );

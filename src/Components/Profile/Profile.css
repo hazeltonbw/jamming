@@ -15,8 +15,9 @@ img {
     right: 0px;
 }
 
-h5 {
+h6 {
     margin-right: 5px;
+    font-size: 0.9rem;
 }
 
 @media only screen and (max-width: 1020px) {
