@@ -6,9 +6,9 @@ const Spotify = {
 	async getAccessToken() {
 		if (AccessToken) return AccessToken;
 
-		const AccessTokenMatch =
+		let AccessTokenMatch =
 			window.location.href.match(/access_token=([^&]*)/);
-		const ExpiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
+		let ExpiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
 		if (AccessTokenMatch && ExpiresInMatch) {
 			AccessToken = AccessTokenMatch[1];
@@ -28,6 +28,7 @@ const Spotify = {
 
 	async search(term) {
 		AccessToken = await Spotify.getAccessToken();
+		if (!AccessToken) return;
 		const headers = { Authorization: `Bearer ${AccessToken}` };
 		const search_url = `${endpoint}search?type=track&q=${term}`;
 		let jsonResponse = "";
@@ -52,7 +53,7 @@ const Spotify = {
 	async savePlaylist(name, uris) {
 		if (!name || !uris) return;
 		AccessToken = await Spotify.getAccessToken();
-
+		if (!AccessToken) return;
 		const headers = {
 			Authorization: `Bearer ${AccessToken}`,
 			"Content-Type": "application/json",
@@ -104,23 +105,20 @@ const Spotify = {
 			console.log(error);
 		}
 	},
-	async getProfilePicURL() {
+	async getProfile() {
 		AccessToken = await Spotify.getAccessToken();
 		if (!AccessToken) return;
 		const headers = { Authorization: `Bearer ${AccessToken}` };
 		let url = "https://api.spotify.com/v1/me";
 		let responseJSON;
-		let images;
 		try {
 			const response = await fetch(url, { headers });
-			if (response.ok) {
+			if (response.ok)
 				responseJSON = await response.json();
-				images = responseJSON.images;
-			}
 		} catch (error) {
 			console.log(error);
 		}
-		if (images.length) return images[0].url;
+		return responseJSON;
 	},
 };
 

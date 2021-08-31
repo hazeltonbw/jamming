@@ -17,7 +17,7 @@ export class TrackList extends Component {
 						/>
 					))
 				) : (
-					<h2 className="no-results">Nothing found :(</h2>
+					<h2 className="no-results">No tracks found</h2>
 				)}
 			</div>
 		);

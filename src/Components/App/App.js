@@ -16,6 +16,7 @@ export default class App extends React.Component {
 		this.updatePlaylistName = this.updatePlaylistName.bind(this);
 		this.savePlaylist = this.savePlaylist.bind(this);
 		this.search = this.search.bind(this);
+		this.initProfile = this.initProfile.bind(this);
 
 		this.state = {
 			searchResults: [
@@ -188,6 +189,14 @@ export default class App extends React.Component {
 		};
 	}
 
+	componentDidMount() {
+		const searchTermExistsInLocalStorage = localStorage.getItem('term');
+		if (searchTermExistsInLocalStorage) {
+			this.search(searchTermExistsInLocalStorage);
+			this.initProfile();
+		}
+	}
+
 	addTrack(track) {
 		if (
 			this.state.playlistTracks.find(
@@ -230,20 +239,31 @@ export default class App extends React.Component {
 	}
 
 	async search(term) {
+		if (!localStorage.getItem('term'))
+			localStorage.setItem('term', term);
+		else
+			localStorage.removeItem('term');
 		let search_results = await Spotify.search(term);
+		if (!search_results) return;
 		this.setState({ searchResults: search_results });
-		this.changeProfilePic();
 	}
 
-	async changeProfilePic() {
-		let url = await Spotify.getProfilePicURL();
-		if (url) this.setState({ profilePic: url });
+	async initProfile() {
+		let profile = await Spotify.getProfile();
+		let profilePicIconURL = "../../images/user-default-icon.png";
+		let userName = profile.display_name;
+		if (profile.images.length) {
+			profilePicIconURL = profile.images[0].url;
+		}
+		this.setState({ 
+			profilePic: profilePicIconURL,
+			username: userName,
+		});
 	}
-
 	render() {
 		return (
 			<div>
-				<Profile profilePicURL={this.state.profilePic} />
+				<Profile profilePicURL={this.state.profilePic} username={this.state.username}/>
 				<header>
 					<div className="UserTitle">
 						<a href="#">
