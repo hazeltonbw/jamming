@@ -1,5 +1,6 @@
 .Track {
     display: flex;
+    transition: all 0.3s ease-in-out;
     align-items: center;
     border: 2px solid transparent;
     box-shadow: 0 0 10px rgba(108, 65, 233, 0.7);
