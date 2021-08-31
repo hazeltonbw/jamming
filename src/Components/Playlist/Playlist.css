@@ -16,6 +16,7 @@
 
 .Playlist input {
     width: 100%;
+    transition: all 0.3s ease-in-out;
     border: 0;
     outline: 0;
     background: white;

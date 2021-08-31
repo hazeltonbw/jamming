@@ -6,7 +6,7 @@
 }
 
 .SearchBar input {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     width: 287px;
     padding: 0.5rem 0;
     border: 1px solid #fff;
