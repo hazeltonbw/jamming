@@ -10,6 +10,8 @@
     padding: 0.88rem;
     background-color: rgba(1, 12, 63, 0.7);
     box-shadow: 0 4px 2px 2px #000000;
+    border-radius: 5px;
+    
 }
 
 .Playlist input {
@@ -22,7 +24,7 @@
     font-size: 1.55rem;
     color: #010c3f;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .Playlist input:hover {
