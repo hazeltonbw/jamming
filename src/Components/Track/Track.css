@@ -50,7 +50,7 @@
 }
 
 .Track-information img {
-    border-radius: 0;
+    border-radius: 5px;
     width: 64px;
     height: 64px;
 }
