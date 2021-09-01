@@ -15,8 +15,10 @@ export class Playlist extends Component {
     render() {
         return (
             <div className="Playlist">
+                <div className="Playlist-save-flex">
                 <input onChange={this.handleNameChange} placeholder="Playlist Name" />
                 <button className="Playlist-save" onClick={this.props.onSave}>SAVE TO SPOTIFY</button>
+                </div>
                 <TrackList
                     playlistTracks={this.props.playlistTracks}
                     onRemove={this.props.onRemove}
