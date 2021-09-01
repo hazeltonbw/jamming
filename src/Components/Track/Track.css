@@ -77,3 +77,10 @@
     text-align: right;
     margin-left: 20px;
 }
+
+@media only screen and (max-width: 1280px) {
+    .SearchResults {
+        width: 95%;
+        margin-bottom: 2rem;
+    }
+}
