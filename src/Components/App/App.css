@@ -1,6 +1,5 @@
 
 header {
-    padding: 0 17% 0 17%;
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -71,8 +70,8 @@ h2 {
 .UserTitle {
     display: flex;
     flex-direction: row-reverse;
-    width: 100%;
-    justify-content: space-between;
+    width: 95%;
+    justify-content: space-evenly;
 }
 
 .App-playlist {
