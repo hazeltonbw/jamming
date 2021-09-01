@@ -4,8 +4,8 @@ html {
 }
 
 .SearchResults {
-    margin-top: 10px;
     width: 50%;
+    margin: 20px;
     height: 950px;
     overflow-y: auto;
     overflow-x: hidden;
