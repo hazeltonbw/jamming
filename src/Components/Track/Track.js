@@ -32,10 +32,16 @@ export class Track extends Component {
         return (
             <div className="Track">
                 <div className="Track-information">
-                    <h3>{this.props.track.name}</h3>
-                    <p>
-                        {this.props.track.artist} | {this.props.track.album}
-                    </p>
+                    <img src={this.props.track.albumart} alt={this.props.track.album + " album art"} />
+                    <div className="title-album">
+                        <div className="track-artist">
+                            <h4>{this.props.track.name}</h4>
+                            <p>{this.props.track.artist}</p>
+                        </div>
+                        <p className="album">
+                            {this.props.track.album}
+                        </p>
+                    </div>
                 </div>
                 {this.renderAction()}
             </div>

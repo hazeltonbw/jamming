@@ -16,12 +16,29 @@ html {
     border-radius: 5px;
 }
 
+.headers {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.titleColumn{
+    margin-left: 10px;
+}
+
+.albumColumn {
+    margin-right: 10px;
+}
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
 
-@media only screen and (max-width: 1020px) {
+.thin {
+    font-weight: 100;
+}
+@media only screen and (max-width: 1280px) {
     .SearchResults {
         width: 95%;
         margin-bottom: 2rem;

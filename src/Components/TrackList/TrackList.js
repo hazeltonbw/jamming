@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Track } from "../Track/Track.js";
 import "./TrackList.css";
-
+import { TrackListHeader } from "../TrackListHeader/TrackListHeader.js";
 export class TrackList extends Component {
 	render() {
 		return (
 			<div className="TrackList">
+				<TrackListHeader />
 				{this.props.playlistTracks.length ? (
 					this.props.playlistTracks.map((track) => (
 						<Track

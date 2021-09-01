@@ -33,9 +33,10 @@
 .Track-information {
     display: flex;
     flex-grow: 1;
-    flex-direction: column;
-    justify-content: center;
-    height:auto;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: auto;
 }
 
 .Track-information h3 {
@@ -46,4 +47,33 @@
     font-size: 0.83rem;
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
+}
+
+.Track-information img {
+    border-radius: 0;
+    width: 64px;
+    height: 64px;
+}
+
+.title-album {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.track-artist {
+    margin-left: 5px;
+    display: flex;
+    text-align: left;
+    max-width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.album {
+    max-width: 50%;
+    text-align: right;
+    margin-left: 20px;
 }

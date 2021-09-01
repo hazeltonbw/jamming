@@ -54,7 +54,7 @@
     background-color: rgba(108, 65, 233, 0.7);
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1280px) {
     .SearchBar {
         flex-direction: column;
         padding-right: 0px;
