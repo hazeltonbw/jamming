@@ -24,7 +24,7 @@ export class SearchBar extends React.Component {
             <div className="SearchBar">
                 <input
                     onChange={this.handleTermChange}
-                    placeholder="The Duck Song"
+                    placeholder="The Beatles"
                     inputMode="search"
                 />
                 <button onClick={this.search} className="SearchButton">
