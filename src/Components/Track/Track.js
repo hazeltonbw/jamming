@@ -11,10 +11,12 @@ export class Track extends Component {
 
     renderAction() {
         const buttonType = this.props.isRemoval === true ? "-" : "+";
+        const action = buttonType === "-" ? "Remove from" : "Add to";
         return (
             <button
                 className="Track-action"
                 onClick={this.props.isRemoval === true ? this.removeTrack : this.addTrack}
+                title={action + " playlist"}
             >
                 {buttonType}
             </button>
