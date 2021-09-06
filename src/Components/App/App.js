@@ -19,7 +19,7 @@ export default class App extends React.Component {
     this.initProfile = this.initProfile.bind(this);
 
     this.state = {
-ma      searchResults: [
+      searchResults: [
         {
           id: "6dGnYIeXmHdcikdzNNDMm2",
           name: "Here Comes The Sun - Remastered 2009",
