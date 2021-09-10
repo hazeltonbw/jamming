@@ -4,7 +4,7 @@ import { SearchResults } from "../SearchResults/SearchResults";
 import { Playlist } from "../Playlist/Playlist";
 import { Spotify } from "../../util/Spotify";
 import { Profile } from "../Profile/Profile";
-import initialState from "./initialState";
+import { initialState } from "./initialState";
 import React from "react";
 
 require("dotenv").config();
@@ -21,7 +21,7 @@ export default class App extends React.Component {
 
     // make App.js less cluttered
     this.state = initialState;
-
+  }
   componentDidMount() {
     const searchTermExistsInLocalStorage = localStorage.getItem("term");
     if (searchTermExistsInLocalStorage) {
